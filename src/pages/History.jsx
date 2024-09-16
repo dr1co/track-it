@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-import Header from "./Header.jsx";
-import Footer from "./Footer.jsx";
-import GreyBG from "./Background.jsx";
+import Header from "../components/Header.jsx";
+import Footer from "../components/Footer.jsx";
+import GreyBG from "../components/Background.jsx";
 
 export default function History() {
   return (

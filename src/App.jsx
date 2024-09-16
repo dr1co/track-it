@@ -2,11 +2,11 @@ import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "./assets/css/reset.css";
-import Login from "./components/Login.jsx";
-import Register from "./components/Register.jsx";
-import Habits from "./components/Habits.jsx";
-import Today from "./components/Today.jsx";
-import History from "./components/History.jsx";
+import Login from "./pages/Login.jsx";
+import Register from "./pages/Register.jsx";
+import Habits from "./pages/Habits.jsx";
+import Today from "./pages/Today.jsx";
+import History from "./pages/History.jsx";
 
 import UserContext from "./contexts/UserContext.js";
 import PercentContext from "./contexts/PercentContext.js";

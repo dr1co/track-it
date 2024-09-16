@@ -1,10 +1,10 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import styled from "styled-components";
 
 import logo from "../assets/media/logo.png";
-import Loader from "./Loader.jsx";
+import Loader from "../components/Loader.jsx";
 
 import UserContext from "../contexts/UserContext.js";
 
@@ -27,18 +27,21 @@ export default function Login() {
       setDisabled(true);
       const request = axios.post(`${apiAddress}/auth/login`, credentials);
       request.then((res) => {
-        setUser({
+        const loggedUser = {
           id: res.data.id,
           name: res.data.name,
           image: res.data.image,
           email: res.data.email,
           password: res.data.password,
           token: res.data.token,
-        });
+        };
+        setUser(loggedUser);
+        localStorage.setItem("user", JSON.stringify(loggedUser));
         setDisabled(false);
         navigate("/habitos");
       });
       request.catch((err) => {
+        setDisabled(false);
         switch (err.response.status) {
           case 401:
             setError(
@@ -62,12 +65,23 @@ export default function Login() {
           default:
             setError("Verifique os dados e tente novamente!");
         }
-        setDisabled(false);
       });
     } else {
       setError("Favor preencher os campos faltantes acima!");
     }
   }
+
+  function persistLogin() {
+    const getUser = JSON.parse(localStorage.getItem("user"));
+
+    if (getUser) {
+      setUser(getUser);
+      setDisabled(true);
+      setTimeout(() => navigate("/habitos"), 2000);
+    }
+  }
+
+  useEffect(persistLogin, []);
 
   return (
     <Container>

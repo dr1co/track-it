@@ -2,10 +2,10 @@ import axios from "axios";
 import styled from "styled-components";
 import { useContext, useState, useEffect } from "react";
 
-import Header from "./Header.jsx";
-import Footer from "./Footer.jsx";
-import GreyBG from "./Background.jsx";
-import Loader from "./Loader.jsx";
+import Header from "../components/Header.jsx";
+import Footer from "../components/Footer.jsx";
+import GreyBG from "../components/Background.jsx";
+import Loader from "../components/Loader.jsx";
 
 import UserContext from "../contexts/UserContext.js";
 

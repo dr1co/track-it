@@ -4,10 +4,10 @@ import styled from "styled-components";
 import dayjs from "dayjs";
 import "dayjs/locale/pt-br";
 
-import Header from "./Header.jsx";
-import Footer from "./Footer.jsx";
-import GreyBG from "./Background.jsx";
-import Loader from "./Loader.jsx";
+import Header from "../components/Header.jsx";
+import Footer from "../components/Footer.jsx";
+import GreyBG from "../components/Background.jsx";
+import Loader from "../components/Loader.jsx";
 
 import UserContext from "../contexts/UserContext.js";
 import PercentContext from "../contexts/PercentContext.js";

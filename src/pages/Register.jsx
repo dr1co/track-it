@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 import { apiAddress } from "../api/apiAddress.js";
 
-import Loader from "./Loader.jsx";
+import Loader from "../components/Loader.jsx";
 import logo from "../assets/media/logo.png";
 
 export default function Register() {
